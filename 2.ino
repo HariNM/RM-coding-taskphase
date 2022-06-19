@@ -1,4 +1,4 @@
-//ON OFF of LED using push button
+//ON OFF of LED using push button in Arduino 
 
 const int buttonPin = 12;
 const int ledPin =  8;
