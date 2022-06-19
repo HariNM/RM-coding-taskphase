@@ -1,4 +1,4 @@
-//Arduino blink led for 1,2,3 seconds and loop
+//using Arduino blink led for 1,2,3 seconds and loop
 /*
 
 */
