@@ -16,5 +16,7 @@ void loop()
   digitalWrite(trigpin,LOW);
   traveltime=pulseIn(echopin,HIGH);
   delay(25);
-  Serial.println(traveltime);
+  distance=traveltime*0.034/2;
+  Serial.println("distance =");
+  Serial.println(distance);
 }
