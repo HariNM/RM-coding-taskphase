@@ -1,12 +1,12 @@
 //Ultrasonic sensor with LED
-int trigpin=12,echopin=11,traveltime;
+int trigpin=12,echopin=11,traveltime,distance;
 
 void setup()
 {
   Serial.begin(9600);
   pinMode(trigpin,OUTPUT);
   pinMode(echopin,INPUT);
-  pinMode(LED_BUILTIN,OUTPUT);
+  pinMode(8,OUTPUT);
 }
 
 void loop()
@@ -18,14 +18,16 @@ void loop()
   digitalWrite(trigpin,LOW);
   traveltime=pulseIn(echopin,HIGH);
   delay(25);
-  Serial.println(traveltime);
-  if(traveltime<15){
-    digitalWrite(LED_BUILTIN,LOW);
+  distance=traveltime*0.034/2;
+  Serial.println("distance=");
+  Serial.println(distance);
+  if(distance<15){
+    digitalWrite(8,LOW);
   }
-  if(traveltime>=15&&traveltime<50){
-    digitalWrite(LED_BUILTIN,HIGH);
+  if(distance>=15&&distance<50){
+    digitalWrite(8,HIGH);
   }
-  if(traveltime>50){
-    digitalWrite(LED_BUILTIN,LOW);
+  if(distance>50){
+    digitalWrite(8,LOW);
   }
 }
