@@ -1,5 +1,5 @@
 //Ultrasonic sensor 
-int trigpin=12,echopin=11,traveltime;
+int trigpin=12,echopin=11,traveltime,distance;
 void setup()
 {
   Serial.begin(9600);
